@@ -54,13 +54,11 @@
         <div class="container-fluid">
             <div class="mega-menu-wrapper">
                 <div class="header-main">
-                    <div class="logo">
+                    <div class="sticky-logo">
                         <a href="{{ url('/') }}">
                             <img src="{{ asset('assets') }}/img/logo.png" alt="logo-img" class="logo-1">
                         </a>
-                        <a href="{{ url('/') }}">
-                            <img src="{{ asset('assets') }}/img/logo-dark.png" alt="logo-img" class="logo-2">
-                        </a>
+
                     </div>
                     <div class="header-left">
                         <div class="mean__menu-wrapper">
