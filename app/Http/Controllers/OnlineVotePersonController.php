@@ -43,6 +43,8 @@ class OnlineVotePersonController extends Controller
         try {
             // Konversi tanggal
             $tanggal = Carbon::createFromFormat('d/m/Y', $request->tanggal_lahir)->format('Y-m-d');
+            $usia   = Carbon::parse($tanggal)->age;
+
         } catch (InvalidFormatException $e) {
             return response()->json([
                 'success' => false,
@@ -97,19 +99,27 @@ class OnlineVotePersonController extends Controller
             }else {
                 $city = $datas[0]->resource->address[0]->city;
                 if (strpos($city, 'ACEH BARAT DAYA') !== false) {
-                    $vote = OnlineVotePerson::create([
-                        'nama' => $request->nama,
-                        'tanggal_lahir' => $tanggal,
-                        'nik' => $request->nik,
-                        'ip' => $ip,
-                        'user_agent' => $userAgent,
-                        'pilihan' => $request->pilihan,
-                    ]);
+                    if ($usia >= 17) {
+                        $vote = OnlineVotePerson::create([
+                            'nama' => $request->nama,
+                            'tanggal_lahir' => $tanggal,
+                            'nik' => $request->nik,
+                            'ip' => $ip,
+                            'user_agent' => $userAgent,
+                            'pilihan' => $request->pilihan,
+                        ]);
 
-                    return response()->json([
-                        'success' => true,
-                        'message' => 'Berhasil Melakukan Voting'
-                    ], 201);
+                        return response()->json([
+                            'success' => true,
+                            'message' => 'Berhasil Melakukan Voting'
+                        ], 201);
+                    }else {
+                        return response()->json([
+                            'success' => false,
+                            'message' => "Usia anda masih $usia tahun, syarat melakukan voting, minimum usia 17 tahun atau lebih !"
+                        ], 422);
+                    }
+
                 } else {
                     return response()->json([
                         'success' => false,
