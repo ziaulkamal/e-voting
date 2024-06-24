@@ -54,7 +54,7 @@
         <div class="container-fluid">
             <div class="mega-menu-wrapper">
                 <div class="header-main">
-                    <div class="sticky-logo">
+                    <div class="logo">
                         <a href="{{ url('/') }}">
                             <img src="{{ asset('assets') }}/img/logo.png" alt="logo-img" class="logo-1">
                         </a>
@@ -191,18 +191,10 @@
         </div>
     </footer>
 
-
-    <!--<< All JS Plugins >>-->
     <script src="{{ asset('assets') }}/js/jquery-3.7.1.min.js"></script>
-    <!-- Bootstrap JS -->
-    <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Bootstrap Datepicker JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-    <!-- Bahasa Indonesia untuk Datepicker -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.id.min.js"></script>
-    <!-- Inisialisasi Datepicker -->
-    <!-- Inisialisasi Datepicker -->
     <script>
         $(document).ready(function(){
             $('#tanggal').datepicker({
@@ -262,26 +254,16 @@
             });
         });
     </script>
-    <!--<< Viewport Js >>-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
     <script src="{{ asset('assets') }}/js/viewport.jquery.js"></script>
-    <!--<< Bootstrap Js >>-->
     <script src="{{ asset('assets') }}/js/bootstrap.bundle.min.js"></script>
-    <!--<< Nice Select Js >>-->
     <script src="{{ asset('assets') }}/js/jquery.nice-select.min.js"></script>
-    <!--<< Waypoints Js >>-->
     <script src="{{ asset('assets') }}/js/jquery.waypoints.js"></script>
-    <!--<< Counterup Js >>-->
     <script src="{{ asset('assets') }}/js/jquery.counterup.min.js"></script>
-    <!--<< Swiper Slider Js >>-->
     <script src="{{ asset('assets') }}/js/swiper-bundle.min.js"></script>
-    <!--<< MeanMenu Js >>-->
     <script src="{{ asset('assets') }}/js/jquery.meanmenu.min.js"></script>
-    <!--<< Magnific Popup Js >>-->
     <script src="{{ asset('assets') }}/js/jquery.magnific-popup.min.js"></script>
-    <!--<< Wow Animation Js >>-->
     <script src="{{ asset('assets') }}/js/wow.min.js"></script>
-    <!--<< Main.js >>-->
     <script src="{{ asset('assets') }}/js/main.js"></script>
 </body>
 </html>
